@@ -28,8 +28,8 @@ def create_fully_connected(x, inputs):
 
     model = Model(inputs=inputs, outputs=prediction)
     optimizer = optimizers.SGD(lr=0.1, decay=1e-4, momentum=0.9)
-    model.compile(optimizer='rmsprop',
-              loss='binary_crossentropy',
+    model.compile(optimizer=optimizer,
+              loss='categorical_crossentropy',
               metrics=['accuracy'])
     return model
 
@@ -40,7 +40,8 @@ def create_fully_connected(x, inputs):
 inputs = Input(shape=(32,32,3))
 
 conv1 = Conv2D(64, (7, 7), strides=(2,2), padding='same')(inputs)
-maxpool = MaxPooling2D((3, 3), strides=(2, 2), padding="same")(conv1)
+normalize = BatchNormalization()(conv1)
+maxpool = MaxPooling2D((3, 3), strides=(2, 2), padding="same")(normalize)
 resblock = create_res_block(maxpool)
 resblock = create_res_block(resblock)
 
@@ -57,5 +58,5 @@ avgpool = AveragePooling2D((3,3))(resblock)
 model = create_fully_connected(avgpool, inputs)
 
 
-model.fit(x_train, y_train, epochs=10)
+model.fit(x_train, y_train, epochs=2)
 model.evaluate(x=x_test, y=y_test)
