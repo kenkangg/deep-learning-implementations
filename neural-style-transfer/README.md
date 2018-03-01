@@ -1,6 +1,6 @@
 # Neural Style Transfer
 
-An implementation of [neural style transfer][paper] in TensorFlow.
+An implementation of [neural style transfer](https://arxiv.org/pdf/1508.06576v2.pdf) in TensorFlow.
 
 In order to reduce training time, this implementation is intended to be run on Google Colaboratory due to free GPU access
 
@@ -17,7 +17,7 @@ Input your content/style images
 
 ### Pretrained Model
 
-* [Pre-trained VGG19 network][net] - Place this is a Google Cloud Platform Storage bucket in order to quickly load this onto the iPython notebook.
+* [Pre-trained VGG19 network](http://www.vlfeat.org/matconvnet/models/beta16/imagenet-vgg-verydeep-19.mat) - Place this is a Google Cloud Platform Storage bucket in order to quickly load this onto the iPython notebook.
 
 ### Dependencies
 
