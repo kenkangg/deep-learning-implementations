@@ -1,10 +1,11 @@
 # Neural Style Transfer
 
+![alt text](https://farm1.staticflickr.com/815/26961909808_469bea0bb3_b.jpg)
+
 An implementation of [neural style transfer](https://arxiv.org/pdf/1508.06576v2.pdf) in TensorFlow.
 
 In order to reduce training time, this implementation is intended to be run on Google Colaboratory due to free GPU access
 
-![alt text](https://farm1.staticflickr.com/815/26961909808_469bea0bb3_b.jpg)
 
 
 ## Running
